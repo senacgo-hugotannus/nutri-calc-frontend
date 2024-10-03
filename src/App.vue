@@ -7,7 +7,6 @@
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">Sobre</RouterLink>
         <RouterLink to="/playground">PlayGround</RouterLink>
-
       </nav>
     </div>
   </header>
