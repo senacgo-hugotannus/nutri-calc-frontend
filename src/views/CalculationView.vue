@@ -77,9 +77,9 @@ export default {
 
   <h2>Cálculos Nutri Calc</h2>
 
-  <p>IMC: <span>{{imcView}}</span></p>
-  <p>TMB (EHB): <span>{{tmbView}}</span></p>
-  <p>Gasto energético: <span>{{geView}}</span></p>
+  <p>IMC: <span class="Kg">{{imcView}}</span></p>
+  <p>TMB (EHB): <span class="Kcal">{{tmbView}}</span></p>
+  <p>Gasto energético: <span class="Kcal">{{geView}}</span></p>
 </template>
 
 <style>
@@ -97,4 +97,14 @@ label, p {
   justify-content: space-between;
   width: 280px;
 }
+
+.Kg::after{
+    padding: 5px;
+    content: "Kg/m²";
+   }
+
+   .Kcal::after{
+    padding: 5px;
+    content: "Kcal";
+   }
 </style>
