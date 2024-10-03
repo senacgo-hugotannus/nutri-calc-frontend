@@ -50,16 +50,17 @@ export default {
 <template>
   <h2>Dados do paciente</h2>
 
-  <div>
-    <label>Peso:<input type="number" step="0.5" v-model="peso"></label>
+<div class="container">
+  <div class="input-group">
+    <label>Peso:<input class="input-field" type="number" step="0.5" v-model="peso"></label>
   </div>
 
-  <div>
-    <label>Altura:<input type="number" step="0.01" v-model="altura"></label>
+  <div class="input-group">
+    <label>Altura:<input class="input-field" type="number" step="0.01" v-model="altura"></label>
   </div>
 
-  <div>
-    <label>Idade:<input type="number" v-model="idade"></label>
+  <div class="input-group">
+    <label>Idade:<input class="input-field" type="number" v-model="idade"></label>
   </div>
 
   <div>
@@ -72,21 +73,24 @@ export default {
     </fieldset>
   </div>
 
-  <div>
+  <div class="input-group">
     <label>Tipo de Atividade Física:
-      <select v-model="fatorAtividade">
+      <select class="input-field" v-model="fatorAtividade">
         <option v-for="tipo in atividades" :value="tipo.fator" :key="tipo.fator">
           {{ tipo.texto }}
         </option>
       </select>
     </label>
   </div>
-
-  <h2>Cálculos Nutri Calc</h2>
-
-  <p>IMC: <span class="Kg">{{imcView}}</span></p>
-  <p>TMB (EHB): <span class="Kcal">{{tmbView}}</span></p>
-  <p>Gasto energético: <span class="Kcal">{{geView}}</span></p>
+  </div>
+  <h2 class="h2">Cálculos Nutri Calc</h2>
+  <div class="container">
+    <div class="result">
+      <p>IMC: <span class="Kg">{{imcView}}</span></p>
+      <p>TMB (EHB): <span class="Kcal">{{tmbView}}</span></p>
+      <p>Gasto energético: <span class="Kcal">{{geView}}</span></p>
+    </div>
+  </div>
 </template>
 
 <style>
