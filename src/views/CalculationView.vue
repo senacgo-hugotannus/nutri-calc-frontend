@@ -16,12 +16,11 @@ export default {
       ],
     }
   },
-
   computed: {
-    ge () {
+    ge() {
       return this.tmb * this.fatorAtividade;
     },
-    imc () {
+    imc() {
       return this.peso / this.altura ** 2;
     },
     tmb() {
@@ -33,10 +32,17 @@ export default {
     tmbMasculino() {
       return 66.5 + 13.8*this.peso + 5*this.altura - 6.8*this.idade;
     },
-
-    geView () { return this.ge.toFixed(1) },
-    imcView () { return this.imc.toFixed(1) },
-    tmbView () { return this.tmb.toFixed(2) },
+    geView () { return this.formatNumber(this.ge, 0) },
+    imcView () { return this.formatNumber(this.imc, 1)},
+    tmbView () { return this.formatNumber(this.tmb, 2) },
+  },
+  methods: {
+    formatNumber(number, precision) {
+      return number.toLocaleString("pt-BR", {
+        minimumFractionDigits: precision,
+        maximumFractionDigits: precision,
+      })
+    }
   }
 }
 </script>
