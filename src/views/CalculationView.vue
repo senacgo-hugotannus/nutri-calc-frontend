@@ -3,7 +3,7 @@ export default {
   data() {
     return {
       altura: 1.75,
-      genero: 'Masculino',
+      genero: '',
       idade: 18,
       peso: 70,
       fatorAtividade: 0,
@@ -63,12 +63,13 @@ export default {
   </div>
 
   <div>
-    <label>Gênero:
-      <select v-model="genero">
-        <option>Feminino</option>
-        <option>Masculino</option>
-      </select>
-    </label>
+    <fieldset>
+      <legend>Gênero:</legend>
+      <label for="masc">Masculino</label>
+      <input type="radio" id="masc" name="genero" value="masculino" v-model="genero">
+      <label for="fem">Feminino</label>
+      <input type="radio" id="fem" name="genero" value="Feminino" v-model="genero">
+    </fieldset>
   </div>
 
   <div>
