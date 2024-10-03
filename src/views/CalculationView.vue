@@ -6,7 +6,7 @@ export default {
       genero: '',
       idade: 18,
       peso: 70,
-      fatorAtividade: 0,
+      fatorAtividade: 1.6,
       atividades:[
         { texto: "Bem leve", fator: 1.2 },
         { texto: "Leve", fator: 1.4 },
