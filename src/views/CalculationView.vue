@@ -72,7 +72,6 @@ export default {
       <input type="radio" id="fem" name="genero" value="Feminino" v-model="genero">
     </fieldset>
   </div>
-
   <div class="input-group">
     <label>Tipo de Atividade Física:
       <select class="input-field" v-model="fatorAtividade">
