@@ -29,9 +29,9 @@ a,
     place-items: center;
   }
 
-   #app {
+  #app {
     display: flex;
-   }
+  }
 }
 .container {
   max-width: 400px;
@@ -47,50 +47,4 @@ a,
 h2 {
   text-align: center;
   color: hsla(160, 100%, 37%, 1);
-}
-
-.input-group {
-  margin-bottom: 15px;
-}
-
-label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-}
-
-.input-field {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-}
-
-.input-field:focus {
-  border-color: #007BFF;
-  outline: none;
-}
-
-.result {
-  font-size: 18px;
-  text-align: left;
-  margin-top: 20px;
-  color: #0377fc;
-}
-
-.select-field {
-  width: 300px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-}
-.Kg::after{
-  padding: 5px;
-  content: "Kg/m²";
-}
-.Kcal::after{
-  padding: 5px;
-  content: "Kcal";
 }
