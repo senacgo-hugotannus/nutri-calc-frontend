@@ -86,3 +86,11 @@ label {
   border-radius: 4px;
   font-size: 16px;
 }
+.Kg::after{
+  padding: 5px;
+  content: "Kg/m²";
+}
+.Kcal::after{
+  padding: 5px;
+  content: "Kcal";
+}

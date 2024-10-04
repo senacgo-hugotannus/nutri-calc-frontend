@@ -63,13 +63,14 @@ export default {
     <label>Idade:<input class="input-field" type="number" v-model="idade"></label>
   </div>
 
-  <div>
+  <div class="input-group">
+    <label>Gênero:</label>
     <fieldset>
       <legend>Gênero:</legend>
       <label for="masc">Masculino</label>
-      <input type="radio" id="masc" name="genero" value="Masculino" v-model="genero">
+      <input class="input-field" type="radio" id="masc" name="genero" value="masculino" v-model="genero">
       <label for="fem">Feminino</label>
-      <input type="radio" id="fem" name="genero" value="Feminino" v-model="genero">
+      <input class="input-field" type="radio" id="fem" name="genero" value="Feminino" v-model="genero">
     </fieldset>
   </div>
   <div class="input-group">
