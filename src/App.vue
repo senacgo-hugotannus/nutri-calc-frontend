@@ -14,10 +14,6 @@
   <main>
     <RouterView />
   </main>
-    <h2>Cálculos Nutri Calc</h2>  
-    <p> IMC: <span class="Kg">{{IMCView}}</span></p>    
-    <p> TMB (EHB): <span class="Kcal">{{tmbView}}</span></p>
-    <p> Gasto Energético: <span class="Kcal">{{fatorAtividadeView}}</span></p> 
 </template>
 
 <script>
