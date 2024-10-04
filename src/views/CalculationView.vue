@@ -32,9 +32,9 @@ export default {
     tmbMasculino() {
       return 66.5 + 13.8*this.peso + 5*this.altura - 6.8*this.idade;
     },
-    geView () { return this.formatNumber(this.ge, 0) },
-    imcView () { return this.formatNumber(this.imc, 1)},
-    tmbView () { return this.formatNumber(this.tmb, 2) },
+    geView() { return this.formatNumber(this.ge, 0) },
+    imcView() { return this.formatNumber(this.imc, 1)},
+    tmbView() { return this.formatNumber(this.tmb, 2) },
   },
   methods: {
     formatNumber(number, precision) {
