@@ -27,10 +27,10 @@ export default {
       return this.genero === 'Feminino' ? this.tmbFeminino : this.tmbMasculino;
     },
     tmbFeminino() {
-      return 655 + 9.56*this.peso + 1.85*this.altura - 4.68*this.idade;
+      return 655 + 9.56 * this.peso + 1.85 * this.altura - 4.68 * this.idade;
     },
     tmbMasculino() {
-      return 66.5 + 13.8*this.peso + 5*this.altura - 6.8*this.idade;
+      return 66.5 + 13.8 * this.peso + 5 * this.altura - 6.8 * this.idade;
     },
     geView() { return this.formatNumber(this.ge, 0) },
     imcView() { return this.formatNumber(this.imc, 1)},
@@ -50,45 +50,44 @@ export default {
 <template>
   <h2>Dados do paciente</h2>
 
-<div class="container">
-  <div class="input-group">
-    <label>Peso:<input class="input-field" type="number" step="0.5" v-model="peso"></label>
-  </div>
+  <div class="container">
+    <div class="input-group">
+      <label>Peso:<input class="input-field" type="number" step="0.5" v-model="peso"></label>
+    </div>
 
-  <div class="input-group">
-    <label>Altura:<input class="input-field" type="number" step="0.01" v-model="altura"></label>
-  </div>
+    <div class="input-group">
+      <label>Altura:<input class="input-field" type="number" step="0.01" v-model="altura"></label>
+    </div>
 
-  <div class="input-group">
-    <label>Idade:<input class="input-field" type="number" v-model="idade"></label>
-  </div>
+    <div class="input-group">
+      <label>Idade:<input class="input-field" type="number" v-model="idade"></label>
+    </div>
 
-  <div class="input-group">
-    <label>Gênero:</label>
-    <fieldset>
-      <legend>Gênero:</legend>
-      <label for="masc">Masculino</label>
-      <input class="input-field" type="radio" id="masc" name="genero" value="masculino" v-model="genero">
-      <label for="fem">Feminino</label>
-      <input class="input-field" type="radio" id="fem" name="genero" value="Feminino" v-model="genero">
-    </fieldset>
-  </div>
-  <div class="input-group">
-    <label>Tipo de Atividade Física:
-      <select class="input-field" v-model="fatorAtividade">
-        <option v-for="tipo in atividades" :value="tipo.fator" :key="tipo.fator">
-          {{ tipo.texto }}
-        </option>
-      </select>
-    </label>
-  </div>
+    <div class="input-group">
+      <fieldset>
+        <legend>Gênero:</legend>
+        <label for="masc">Masculino</label>
+        <input class="input-field" type="radio" id="masc" name="genero" value="masculino" v-model="genero">
+        <label for="fem">Feminino</label>
+        <input class="input-field" type="radio" id="fem" name="genero" value="Feminino" v-model="genero">
+      </fieldset>
+    </div>
+    <div class="input-group">
+      <label>Tipo de Atividade:
+        <select class="input-field" v-model="fatorAtividade">
+          <option v-for="tipo in atividades" :value="tipo.fator" :key="tipo.fator">
+            {{ tipo.texto }}
+          </option>
+        </select>
+      </label>
+    </div>
   </div>
   <h2 class="h2">Cálculos Nutri Calc</h2>
   <div class="container">
     <div class="result">
-      <p>IMC: <span class="Kg">{{imcView}}</span></p>
-      <p>TMB (EHB): <span class="Kcal">{{tmbView}}</span></p>
-      <p>Gasto energético: <span class="Kcal">{{geView}}</span></p>
+      <p>IMC: <span class="Kg">{{ imcView }}</span></p>
+      <p>TMB (EHB): <span class="Kcal">{{ tmbView }}</span></p>
+      <p>Gasto energético: <span class="Kcal">{{ geView }}</span></p>
     </div>
   </div>
 </template>
@@ -106,16 +105,17 @@ input {
 label, p {
   display: flex;
   justify-content: space-between;
-  width: 280px;
+  align-items: center;
+  width: inherit;
 }
 
-.Kg::after{
-    padding: 5px;
-    content: "Kg/m²";
-   }
+.Kg::after {
+  padding: 5px;
+  content: "Kg/m²";
+}
 
-   .Kcal::after{
-    padding: 5px;
-    content: "Kcal";
-   }
+.Kcal::after {
+  padding: 5px;
+  content: "Kcal";
+}
 </style>
