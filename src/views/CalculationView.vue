@@ -1,9 +1,11 @@
 <script>
+import NCPanel from '@/components/NCPanel.vue';
 import NCNumber from '@/components/NCNumber.vue';
 
 export default {
   components:{
-      NCNumber
+      NCNumber,
+      NCPanel
   },
   data() {
     return {
@@ -44,7 +46,7 @@ export default {
 <template>
   <h2>Dados do paciente</h2>
 
-  <div class="container">
+  <NCPanel>
     <div class="input-group">
       <label>Peso:<input class="input-field" type="number" step="0.5" v-model="peso"></label>
     </div>
@@ -75,15 +77,15 @@ export default {
         </select>
       </label>
     </div>
-  </div>
+  </NCPanel>
   <h2 class="h2">Cálculos Nutri Calc</h2>
-  <div class="container">
+  <NCPanel>
     <div class="result">
       <p>IMC: <NCNumber :value="imc" :precision="1" class="Kg"/></p>
       <p>TMB (EHB): <NCNumber :value="tmb" :precision="2" class="Kcal"/></p>
       <p>Gasto energético: <NCNumber :value="ge" :precision="0" class="Kcal"/></p>
     </div>
-  </div>
+  </NCPanel>
 </template>
 
 <style>
