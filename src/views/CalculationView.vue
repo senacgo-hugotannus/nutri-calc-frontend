@@ -14,7 +14,7 @@ export default {
       idade: 18,
       peso: 70,
       fatorAtividade: 1.6,
-      atividades:[
+      atividades: [
         { texto: "Bem leve", fator: 1.2 },
         { texto: "Leve", fator: 1.4 },
         { texto: "Moderado", fator: 1.6 },
@@ -44,7 +44,8 @@ export default {
 </script>
 
 <template>
-  <h2>Dados do paciente</h2>
+
+   <h2>Dados do paciente</h2>
 
   <NCPanel>
     <div class="input-group">
@@ -68,6 +69,7 @@ export default {
         <input class="input-field" type="radio" id="fem" name="genero" value="Feminino" v-model="genero">
       </fieldset>
     </div>
+   
     <div class="input-group">
       <label>Tipo de Atividade:
         <select class="input-field" v-model="fatorAtividade">
@@ -88,6 +90,7 @@ export default {
   </NCPanel>
 </template>
 
+
 <style>
 div {
   margin: 8px 0;
@@ -98,7 +101,8 @@ input {
   text-align: right;
 }
 
-label, p {
+label,
+p {
   display: flex;
   justify-content: space-between;
   align-items: center;
