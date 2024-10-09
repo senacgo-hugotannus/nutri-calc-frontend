@@ -1,5 +1,10 @@
 <script>
+import NCNumber from '@/components/NCNumber.vue';
+
 export default {
+  components:{
+      NCNumber
+  },
   data() {
     return {
       altura: 1.75,
@@ -32,18 +37,7 @@ export default {
     tmbMasculino() {
       return 66.5 + 13.8 * this.peso + 5 * this.altura - 6.8 * this.idade;
     },
-    geView() { return this.formatNumber(this.ge, 0) },
-    imcView() { return this.formatNumber(this.imc, 1)},
-    tmbView() { return this.formatNumber(this.tmb, 2) },
   },
-  methods: {
-    formatNumber(number, precision) {
-      return number.toLocaleString("pt-BR", {
-        minimumFractionDigits: precision,
-        maximumFractionDigits: precision,
-      })
-    }
-  }
 }
 </script>
 
@@ -85,9 +79,9 @@ export default {
   <h2 class="h2">Cálculos Nutri Calc</h2>
   <div class="container">
     <div class="result">
-      <p>IMC: <span class="Kg">{{ imcView }}</span></p>
-      <p>TMB (EHB): <span class="Kcal">{{ tmbView }}</span></p>
-      <p>Gasto energético: <span class="Kcal">{{ geView }}</span></p>
+      <p>IMC: <NCNumber :value="imc" :precision="1" class="Kg"/></p>
+      <p>TMB (EHB): <NCNumber :value="tmb" :precision="2" class="Kcal"/></p>
+      <p>Gasto energético: <NCNumber :value="ge" :precision="0" class="Kcal"/></p>
     </div>
   </div>
 </template>
