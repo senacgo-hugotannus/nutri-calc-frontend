@@ -91,15 +91,6 @@ nav a:first-of-type {
     padding: 1rem 0;
     margin-top: 1rem;
   }
-  .Kg::after{
-    padding: 5px;
-    content: "Kg/m²";
-   }
-
-   .Kcal::after{
-    padding: 5px;
-    content: "Kcal";
-   }
-
+ 
 }
 </style>
