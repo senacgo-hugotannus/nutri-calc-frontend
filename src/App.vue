@@ -1,23 +1,26 @@
 <template>
-  <header>
-    <div class="wrapper">
-      <MainPage title="Nutri Calc" />
+    <NCContainer>
+      <header>
+        <div class="wrapper">
+          <MainPage title="Nutri Calc" />
 
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">Sobre</RouterLink>
-        <RouterLink to="/calculation">Cálculos</RouterLink>
-      </nav>
-    </div>
-  </header>
+          <nav>
+            <RouterLink to="/">Home</RouterLink>
+            <RouterLink to="/about">Sobre</RouterLink>
+            <RouterLink to="/calculation">Cálculos</RouterLink>
+          </nav>
+        </div>
+      </header>
 
-  <main>
-    <RouterView />
-  </main>
+      <main>
+        <RouterView />
+      </main>
+  </NCContainer>
 </template>
 
 <script>
 import { RouterLink, RouterView } from 'vue-router'
+import NCContainer from './components/NCContainer.vue'
 import TheMainPage from './components/TheMainPage.vue'
 
 export default {
@@ -25,7 +28,8 @@ export default {
   components: {
     MainPage: TheMainPage,
     RouterLink,
-    RouterView
+    RouterView,
+    NCContainer,
   }
 }
 </script>

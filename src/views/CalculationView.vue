@@ -45,6 +45,7 @@ export default {
 
 <template>
 
+
    <h2>Dados do paciente</h2>
 
   <NCPanel>
