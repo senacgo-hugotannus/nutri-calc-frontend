@@ -8,7 +8,8 @@
             <RouterLink to="/">Home</RouterLink>
             <RouterLink to="/about">Sobre</RouterLink>
             <RouterLink to="/calculation">Cálculos</RouterLink>
-          </nav>
+            <RouterLink to="/diet">Dietas</RouterLink>
+      </nav>
         </div>
       </NCContainer>
     </header>
