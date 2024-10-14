@@ -1,12 +1,5 @@
 <template>
     <div class="container">
-        <slot>
-          
-        </slot>
-     </div>
+        <slot></slot>
+    </div>
 </template>
-
-<style scoped>
-
-
-</style>
