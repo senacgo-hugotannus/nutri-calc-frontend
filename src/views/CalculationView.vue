@@ -3,9 +3,9 @@ import NCPanel from '@/components/NCPanel.vue';
 import NCNumber from '@/components/NCNumber.vue';
 
 export default {
-  components:{
-      NCNumber,
-      NCPanel
+  components: {
+    NCNumber,
+    NCPanel
   },
   data() {
     return {
@@ -14,7 +14,7 @@ export default {
       idade: 18,
       peso: 70,
       fatorAtividade: 1.6,
-      atividades:[
+      atividades: [
         { texto: "Bem leve", fator: 1.2 },
         { texto: "Leve", fator: 1.4 },
         { texto: "Moderado", fator: 1.6 },
@@ -45,20 +45,16 @@ export default {
 
 <template>
   <h2>Dados do paciente</h2>
-
   <NCPanel>
     <div class="input-group">
       <label>Peso:<input class="input-field" type="number" step="0.5" v-model="peso"></label>
     </div>
-
     <div class="input-group">
       <label>Altura:<input class="input-field" type="number" step="0.01" v-model="altura"></label>
     </div>
-
     <div class="input-group">
       <label>Idade:<input class="input-field" type="number" v-model="idade"></label>
     </div>
-
     <div class="input-group">
       <fieldset>
         <legend>Gênero:</legend>
@@ -81,9 +77,15 @@ export default {
   <h2 class="h2">Cálculos Nutri Calc</h2>
   <NCPanel>
     <div class="result">
-      <p>IMC: <NCNumber :value="imc" :precision="1" class="Kg"/></p>
-      <p>TMB (EHB): <NCNumber :value="tmb" :precision="2" class="Kcal"/></p>
-      <p>Gasto energético: <NCNumber :value="ge" :precision="0" class="Kcal"/></p>
+      <p>IMC:
+        <NCNumber :value="imc" :precision="1" class="Kg" />
+      </p>
+      <p>TMB (EHB):
+        <NCNumber :value="tmb" :precision="2" class="Kcal" />
+      </p>
+      <p>Gasto energético:
+        <NCNumber :value="ge" :precision="0" class="Kcal" />
+      </p>
     </div>
   </NCPanel>
 </template>
@@ -98,7 +100,8 @@ input {
   text-align: right;
 }
 
-label, p {
+label,
+p {
   display: flex;
   justify-content: space-between;
   align-items: center;
