@@ -49,7 +49,7 @@ export default {
   <h2>Dados do paciente</h2>
   <NCPanel>
     <div class="input-group">
-      <NCInput :label="'Peso:'" type="number" step="0.5" v-model="peso" :class="input - field" />
+      <NCInput :label="'Peso:'" type="number" step="0.5" v-model="peso"/>
     </div>
     <div class="input-group">
       <label>Altura:<input class="input-field" type="number" step="0.01" v-model="altura"></label>
