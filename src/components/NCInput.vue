@@ -1,6 +1,6 @@
 <template>
     <div>
-        <label>{{ label }}<input :value="modelValue" @input="$emit('update:modelValue', $event.target.value)" /></label>
+        <label>{{ label }}<input :value="modelValue" @input="$emit('update:modelValue', $event.target.value)" :step="step" :type="type"/></label>
     </div>
 </template>
 
@@ -8,10 +8,7 @@
 export default {
     emits: ['update:modelValue'],
     props: {
-        modelValue: {
-            type: [String, Number],
-            required: true,
-        },
+        modelValue: null,
         label: null,
         type: null,
         step: null,
