@@ -88,15 +88,6 @@ export default {
       <p>Gasto energético:
         <NCNumber :value="ge" :precision="0" class="Kcal" />
       </p>
-      <p>IMC:
-        <NCNumber :value="imc" :precision="1" class="Kg" />
-      </p>
-      <p>TMB (EHB):
-        <NCNumber :value="tmb" :precision="2" class="Kcal" />
-      </p>
-      <p>Gasto energético:
-        <NCNumber :value="ge" :precision="0" class="Kcal" />
-      </p>
     </div>
   </NCPanel>
 </template>
