@@ -3,13 +3,11 @@
 </template>
 
 <script>
-
 export default {
     props: {
         value: Number,
         precision: Number,
     },
-
     computed: {
         formatNumber() {
             return this.value.toLocaleString("pt-BR", {
@@ -19,6 +17,4 @@ export default {
         }
     }
 }  
-
-
 </script>

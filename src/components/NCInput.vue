@@ -21,11 +21,11 @@ export default {
 </script>
 
 <style scoped>
-    .input-field {
+.input-field {
     width: min-content;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
-    }
+}
 </style>
