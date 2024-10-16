@@ -19,12 +19,16 @@
       </NCContainer>
     </main>
   </NCContainer>
+  <NCInfo :imcLabel="'IMC: '" :imcValue="22.9"
+          :tmbLabel="'TMB: '" :tmbValue="918.85"
+          :geLabel="'GE: '"   :geValue="2500"/>
 </template>
 
 <script>
 import { RouterLink, RouterView } from 'vue-router'
 import NCContainer from './components/NCContainer.vue'
 import TheMainPage from './components/TheMainPage.vue'
+import NCInfo from './components/NCInfo.vue';
 
 export default {
   name: 'App',
@@ -33,6 +37,7 @@ export default {
     RouterLink,
     RouterView,
     NCContainer,
+    NCInfo,
   }
 }
 </script>
