@@ -1,11 +1,13 @@
 <script>
 import NCPanel from '@/components/NCPanel.vue';
 import NCNumber from '@/components/NCNumber.vue';
+import NCInput from '@/components/NCInput.vue'
 
 export default {
   components: {
     NCNumber,
-    NCPanel
+    NCPanel,
+    NCInput,
   },
   data() {
     return {
@@ -47,7 +49,7 @@ export default {
   <h2>Dados do paciente</h2>
   <NCPanel>
     <div class="input-group">
-      <label>Peso:<input class="input-field" type="number" step="0.5" v-model="peso"></label>
+      <NCInput :label="'Peso:'" type="number" step="0.5" v-model="peso" />
     </div>
     <div class="input-group">
       <label>Altura:<input class="input-field" type="number" step="0.01" v-model="altura"></label>
