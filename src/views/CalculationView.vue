@@ -2,6 +2,9 @@
 import NCPanel from '@/components/NCPanel.vue';
 import NCNumber from '@/components/NCNumber.vue';
 import NCInput from '@/components/NCInput.vue'
+import { PacienteStore } from "@/stores/Pacientes"
+
+const store = PacienteStore()
 
 export default {
   components: {
