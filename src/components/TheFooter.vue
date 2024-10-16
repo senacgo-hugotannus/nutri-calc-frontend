@@ -1,7 +1,15 @@
 <template>
     <div>
-        <slot></slot>
+        <NCContainer></NCContainer>
     </div>
 </template>
 
-<script></script>
+<script>
+import NCContainer from './NCContainer.vue';
+
+export default {
+    components: {
+        NCContainer,
+    }
+}
+</script>
