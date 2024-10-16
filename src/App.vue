@@ -19,12 +19,14 @@
       </NCContainer>
     </main>
   </NCContainer>
+  <TheFooter/>
 </template>
 
 <script>
 import { RouterLink, RouterView } from 'vue-router'
 import NCContainer from './components/NCContainer.vue'
 import TheMainPage from './components/TheMainPage.vue'
+import TheFooter from './components/TheFooter.vue'
 
 export default {
   name: 'App',
@@ -33,6 +35,7 @@ export default {
     RouterLink,
     RouterView,
     NCContainer,
+    TheFooter,
   }
 }
 </script>
