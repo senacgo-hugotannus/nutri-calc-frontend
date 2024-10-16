@@ -9,6 +9,7 @@
             <RouterLink to="/about">Sobre</RouterLink>
             <RouterLink to="/calculation">Cálculos</RouterLink>
             <RouterLink to="/diet">Dietas</RouterLink>
+            <RouterLink to="/registration">Registro do Usuário</RouterLink>
       </nav>
         </div>
       </NCContainer>
