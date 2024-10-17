@@ -73,10 +73,10 @@ nav a:first-of-type {
     padding-right: calc(var(--section-gap) / 2);
   }
 
-  .logo {
+   .logo {
     margin: 0 2rem 0 0;
   }
-  
+
   nav {
     text-align: left;
     margin-left: -1rem;

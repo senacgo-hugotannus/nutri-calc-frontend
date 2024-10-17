@@ -1,5 +1,5 @@
 <template>
-    <div class="wrapper">
+    <div>
         <MainPage title="Nutri Calc" />
         <nav>
             <NCContainer>
@@ -23,10 +23,3 @@ export default {
 }
 </script>
 
-<style scoped>
-.wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-}
-</style>
