@@ -2,7 +2,6 @@
   <header>
     <TheNavBar>
       <RouterLink to="/">Home</RouterLink>
-      <RouterLink to="/about">Sobre</RouterLink>
       <RouterLink to="/calculation">Cálculos</RouterLink>
       <RouterLink to="/diet">Dietas</RouterLink>
     </TheNavBar>
