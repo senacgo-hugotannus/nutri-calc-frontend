@@ -4,6 +4,7 @@
       <RouterLink to="/">Home</RouterLink>
       <RouterLink to="/calculation">Cálculos</RouterLink>
       <RouterLink to="/diet">Dietas</RouterLink>
+      <RouterLink to="/registration">Registro</RouterLink>
     </TheNavBar>
   </header>
   <main>
