@@ -1,15 +1,10 @@
 <template>
   <header>
     <TheNavBar>
-      <div class="wrapper">
-        <MainPage title="Nutri Calc" />
-        <nav>
-          <RouterLink to="/">Home</RouterLink>
-          <RouterLink to="/about">Sobre</RouterLink>
-          <RouterLink to="/calculation">Cálculos</RouterLink>
-          <RouterLink to="/diet">Dietas</RouterLink>
-        </nav>
-      </div>
+      <RouterLink to="/">Home</RouterLink>
+      <RouterLink to="/about">Sobre</RouterLink>
+      <RouterLink to="/calculation">Cálculos</RouterLink>
+      <RouterLink to="/diet">Dietas</RouterLink>
     </TheNavBar>
   </header>
   <main>
@@ -22,13 +17,11 @@
 <script>
 import { RouterLink, RouterView } from 'vue-router'
 import NCContainer from './components/NCContainer.vue'
-import TheMainPage from './components/TheMainPage.vue'
 import TheNavBar from './components/TheNavBar.vue';
 
 export default {
   name: 'App',
   components: {
-    MainPage: TheMainPage,
     RouterLink,
     RouterView,
     NCContainer,
@@ -83,7 +76,7 @@ nav a:first-of-type {
   .logo {
     margin: 0 2rem 0 0;
   }
-
+  
   nav {
     text-align: left;
     margin-left: -1rem;
