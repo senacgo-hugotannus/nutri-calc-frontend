@@ -1,7 +1,9 @@
 <script>
+import { mapState, mapWritableState } from 'pinia'
 import NCPanel from '@/components/NCPanel.vue';
 import NCNumber from '@/components/NCNumber.vue';
 import NCInput from '@/components/NCInput.vue'
+import { pacienteStore } from "@/stores/pacientes.js"
 
 export default {
   components: {
@@ -11,11 +13,6 @@ export default {
   },
   data() {
     return {
-      altura: 1.75,
-      genero: 'Masculino',
-      idade: 18,
-      peso: 70,
-      fatorAtividade: 1.6,
       atividades: [
         { texto: "Bem leve", fator: 1.2 },
         { texto: "Leve", fator: 1.4 },
@@ -26,21 +23,8 @@ export default {
     }
   },
   computed: {
-    ge() {
-      return this.tmb * this.fatorAtividade;
-    },
-    imc() {
-      return this.peso / this.altura ** 2;
-    },
-    tmb() {
-      return this.genero === 'Feminino' ? this.tmbFeminino : this.tmbMasculino;
-    },
-    tmbFeminino() {
-      return 655 + 9.56 * this.peso + 1.85 * this.altura - 4.68 * this.idade;
-    },
-    tmbMasculino() {
-      return 66.5 + 13.8 * this.peso + 5 * this.altura - 6.8 * this.idade;
-    },
+    ...mapState(pacienteStore, ['ge', 'imc', 'tmb']),
+    ...mapWritableState(pacienteStore, ['altura', 'fatorAtividade', 'genero', 'idade', 'peso']),
   },
 }
 </script>
@@ -61,7 +45,8 @@ export default {
       <fieldset>
         <legend>Gênero:</legend>
         <label for="masc">Masculino</label>
-        <input class="input-field" type="radio" id="masc" name="genero" value="masculino" v-model="genero">
+        <input class="input-field" type="radio" id="masc" name="genero" value="masculino"
+          v-model="genero">
         <label for="fem">Feminino</label>
         <input class="input-field" type="radio" id="fem" name="genero" value="Feminino" v-model="genero">
       </fieldset>
