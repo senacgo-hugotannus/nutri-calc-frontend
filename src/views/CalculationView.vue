@@ -1,12 +1,9 @@
 <script>
-import {mapStores } from 'pinia'
-
+import { mapStores } from 'pinia'
 import NCPanel from '@/components/NCPanel.vue';
 import NCNumber from '@/components/NCNumber.vue';
 import NCInput from '@/components/NCInput.vue'
 import { pacienteStore } from "@/stores/pacientes.js"
-
-// const store = pacienteStore()
 
 export default {
   components: {
@@ -16,9 +13,6 @@ export default {
   },
   data() {
     return {
-      
-      peso: 70,
-      fatorAtividade: 1.6,
       atividades: [
         { texto: "Bem leve", fator: 1.2 },
         { texto: "Leve", fator: 1.4 },
@@ -29,22 +23,21 @@ export default {
     }
   },
   computed: {
-    ...mapStores(pacienteStore, ['altura', 'genero', 'idade']),
-
+    ...mapStores(pacienteStore),
     ge() {
-      return this.tmb * this.fatorAtividade;
+      return this.tmb * this.pacienteStore.fatorAtividade;
     },
     imc() {
-      return this.peso / this.pacienteStore.altura ** 2;
+      return this.pacienteStore.peso / this.pacienteStore.altura ** 2;
     },
     tmb() {
       return this.pacienteStore.genero === 'Feminino' ? this.tmbFeminino : this.tmbMasculino;
     },
     tmbFeminino() {
-      return 655 + 9.56 * this.peso + 1.85 * this.pacienteStore.altura - 4.68 * this.pacienteStore.idade;
+      return 655 + 9.56 * this.pacienteStore.peso + 1.85 * this.pacienteStore.altura - 4.68 * this.pacienteStore.idade;
     },
     tmbMasculino() {
-      return 66.5 + 13.8 * this.peso + 5 * this.pacienteStore.altura - 6.8 * this.pacienteStore.idade;
+      return 66.5 + 13.8 * this.pacienteStore.peso + 5 * this.pacienteStore.altura - 6.8 * this.pacienteStore.idade;
     },
   },
 }
@@ -54,7 +47,7 @@ export default {
   <h2>Dados do paciente</h2>
   <NCPanel>
     <div class="input-group">
-      <NCInput :label="'Peso:'" type="number" step="0.5" v-model="peso" />
+      <NCInput :label="'Peso:'" type="number" step="0.5" v-model="pacienteStore.peso" />
     </div>
     <div class="input-group">
       <label>Altura:<input class="input-field" type="number" step="0.01" v-model="pacienteStore.altura"></label>
@@ -66,14 +59,15 @@ export default {
       <fieldset>
         <legend>Gênero:</legend>
         <label for="masc">Masculino</label>
-        <input class="input-field" type="radio" id="masc" name="genero" value="masculino" v-model="pacienteStore.genero">
+        <input class="input-field" type="radio" id="masc" name="genero" value="masculino"
+          v-model="pacienteStore.genero">
         <label for="fem">Feminino</label>
         <input class="input-field" type="radio" id="fem" name="genero" value="Feminino" v-model="pacienteStore.genero">
       </fieldset>
     </div>
     <div class="input-group">
       <label>Tipo de Atividade:
-        <select class="input-field" v-model="fatorAtividade">
+        <select class="input-field" v-model="pacienteStore.fatorAtividade">
           <option v-for="tipo in atividades" :value="tipo.fator" :key="tipo.fator">
             {{ tipo.texto }}
           </option>

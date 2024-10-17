@@ -4,10 +4,11 @@ export const pacienteStore = defineStore('paciente', {
   
     state: () => {
       return {
-    
         altura: 1.75,
         genero: 'Masculino',
         idade: 18,
+        peso: 70,
+        fatorAtividade: 1.6,
       }
     },
   })
