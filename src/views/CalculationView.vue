@@ -16,9 +16,7 @@ export default {
   },
   data() {
     return {
-      altura: 1.75,
-      genero: 'Masculino',
-      idade: 18,
+      
       peso: 70,
       fatorAtividade: 1.6,
       atividades: [
