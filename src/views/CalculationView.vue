@@ -1,10 +1,12 @@
 <script>
+import {mapStores } from 'pinia'
+
 import NCPanel from '@/components/NCPanel.vue';
 import NCNumber from '@/components/NCNumber.vue';
 import NCInput from '@/components/NCInput.vue'
-import { PacienteStore } from "@/stores/Pacientes"
+import { pacienteStore } from "@/stores/pacientes.js"
 
-const store = PacienteStore()
+// const store = pacienteStore()
 
 export default {
   components: {
@@ -29,20 +31,22 @@ export default {
     }
   },
   computed: {
+    ...mapStores(pacienteStore, ['altura', 'genero', 'idade']),
+
     ge() {
       return this.tmb * this.fatorAtividade;
     },
     imc() {
-      return this.peso / this.altura ** 2;
+      return this.peso / this.pacienteStore.altura ** 2;
     },
     tmb() {
-      return this.genero === 'Feminino' ? this.tmbFeminino : this.tmbMasculino;
+      return this.pacienteStore.genero === 'Feminino' ? this.tmbFeminino : this.tmbMasculino;
     },
     tmbFeminino() {
-      return 655 + 9.56 * this.peso + 1.85 * this.altura - 4.68 * this.idade;
+      return 655 + 9.56 * this.peso + 1.85 * this.pacienteStore.altura - 4.68 * this.pacienteStore.idade;
     },
     tmbMasculino() {
-      return 66.5 + 13.8 * this.peso + 5 * this.altura - 6.8 * this.idade;
+      return 66.5 + 13.8 * this.peso + 5 * this.pacienteStore.altura - 6.8 * this.pacienteStore.idade;
     },
   },
 }
@@ -55,18 +59,18 @@ export default {
       <NCInput :label="'Peso:'" type="number" step="0.5" v-model="peso" />
     </div>
     <div class="input-group">
-      <label>Altura:<input class="input-field" type="number" step="0.01" v-model="altura"></label>
+      <label>Altura:<input class="input-field" type="number" step="0.01" v-model="pacienteStore.altura"></label>
     </div>
     <div class="input-group">
-      <label>Idade:<input class="input-field" type="number" v-model="idade"></label>
+      <label>Idade:<input class="input-field" type="number" v-model="pacienteStore.idade"></label>
     </div>
     <div class="input-group">
       <fieldset>
         <legend>Gênero:</legend>
         <label for="masc">Masculino</label>
-        <input class="input-field" type="radio" id="masc" name="genero" value="masculino" v-model="genero">
+        <input class="input-field" type="radio" id="masc" name="genero" value="masculino" v-model="pacienteStore.genero">
         <label for="fem">Feminino</label>
-        <input class="input-field" type="radio" id="fem" name="genero" value="Feminino" v-model="genero">
+        <input class="input-field" type="radio" id="fem" name="genero" value="Feminino" v-model="pacienteStore.genero">
       </fieldset>
     </div>
     <div class="input-group">

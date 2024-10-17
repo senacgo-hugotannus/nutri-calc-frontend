@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 
-export const PacienteStore = defineStore('Paciente', {
+export const pacienteStore = defineStore('paciente', {
   
     state: () => {
       return {
