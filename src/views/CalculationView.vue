@@ -1,5 +1,5 @@
 <script>
-import { mapStores } from 'pinia'
+import { mapState, mapStores } from 'pinia'
 import NCPanel from '@/components/NCPanel.vue';
 import NCNumber from '@/components/NCNumber.vue';
 import NCInput from '@/components/NCInput.vue'
@@ -24,21 +24,7 @@ export default {
   },
   computed: {
     ...mapStores(pacienteStore),
-    ge() {
-      return this.tmb * this.pacienteStore.fatorAtividade;
-    },
-    imc() {
-      return this.pacienteStore.peso / this.pacienteStore.altura ** 2;
-    },
-    tmb() {
-      return this.pacienteStore.genero === 'Feminino' ? this.tmbFeminino : this.tmbMasculino;
-    },
-    tmbFeminino() {
-      return 655 + 9.56 * this.pacienteStore.peso + 1.85 * this.pacienteStore.altura - 4.68 * this.pacienteStore.idade;
-    },
-    tmbMasculino() {
-      return 66.5 + 13.8 * this.pacienteStore.peso + 5 * this.pacienteStore.altura - 6.8 * this.pacienteStore.idade;
-    },
+    ...mapState(pacienteStore, ['ge', 'imc', 'tmb'])
   },
 }
 </script>
