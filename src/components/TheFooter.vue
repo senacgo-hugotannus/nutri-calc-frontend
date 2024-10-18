@@ -1,15 +1,15 @@
 <template>
     <div>
-        <NCContainer></NCContainer>
+        <NCInfo />
     </div>
 </template>
 
 <script>
-import NCContainer from './NCContainer.vue';
+import NCInfo from './NCInfo.vue';
 
 export default {
     components: {
-        NCContainer,
+        NCInfo,
     }
 }
 </script>
