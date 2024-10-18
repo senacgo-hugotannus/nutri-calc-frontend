@@ -1,13 +1,11 @@
 <script>
 import { mapState, mapWritableState } from 'pinia'
 import NCPanel from '@/components/NCPanel.vue';
-import NCNumber from '@/components/NCNumber.vue';
 import NCInput from '@/components/NCInput.vue'
 import { pacienteStore } from "@/stores/pacientes.js"
 
 export default {
   components: {
-    NCNumber,
     NCPanel,
     NCInput,
   },
@@ -61,20 +59,6 @@ export default {
       </label>
     </div>
   </NCPanel>
-  <h2 class="h2">Cálculos Nutri Calc</h2>
-  <NCPanel>
-    <div class="result">
-      <p>IMC:
-        <NCNumber :value="imc" :precision="1" class="Kg" />
-      </p>
-      <p>TMB (EHB):
-        <NCNumber :value="tmb" :precision="2" class="Kcal" />
-      </p>
-      <p>Gasto energético:
-        <NCNumber :value="ge" :precision="0" class="Kcal" />
-      </p>
-    </div>
-  </NCPanel>
 </template>
 
 <style>
@@ -93,15 +77,5 @@ p {
   justify-content: space-between;
   align-items: center;
   width: inherit;
-}
-
-.Kg::after {
-  padding: 5px;
-  content: "Kg/m²";
-}
-
-.Kcal::after {
-  padding: 5px;
-  content: "Kcal";
 }
 </style>

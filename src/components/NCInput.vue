@@ -15,7 +15,7 @@ export default {
         label: null,
         type: null,
         step: null,
-        placeholder: null
+        placeholder: null,
     },
 }
 </script>
@@ -28,4 +28,5 @@ export default {
     border-radius: 4px;
     font-size: 16px;
 }
+
 </style>
