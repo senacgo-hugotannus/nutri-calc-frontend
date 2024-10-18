@@ -41,7 +41,6 @@ h2 {
   color: hsla(160, 100%, 37%, 1);
 }
 .input-field:focus {
-  border-color: #007BFF;
   outline: none;
 }
 .select-field {
@@ -51,12 +50,7 @@ h2 {
   border-radius: 4px;
   font-size: 16px;
 }
-.result {
-  font-size: 18px;
-  text-align: left;
-  margin-top: 20px;
-  color: #0377fc;
-}
+
 .input-field {
   width: min-content;
   padding: 10px;
