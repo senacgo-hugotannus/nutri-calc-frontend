@@ -11,12 +11,14 @@
       <RouterView />
     </NCContainer>
   </main>
+  <NCInfo/>
 </template>
 
 <script>
 import { RouterLink, RouterView } from 'vue-router'
 import NCContainer from './components/NCContainer.vue'
 import TheNavBar from './components/TheNavBar.vue';
+import NCInfo from './components/NCInfo.vue';
 
 export default {
   name: 'App',
@@ -25,6 +27,7 @@ export default {
     RouterView,
     NCContainer,
     TheNavBar,
+    NCInfo,
   }
 }
 </script>
