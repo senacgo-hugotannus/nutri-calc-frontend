@@ -1,35 +1,37 @@
 <template>
-    <div>
-      <h1>Registro do Usuário</h1>
-      <p></p>
-    </div>
-    <div class="card-list">
-    <div 
-      v-for="(item, index) in items" 
-      :key="item.id" 
-      class="card" 
-      @click="toggleExpand(index)"
-    >
+  <div>
+    <h1>Registro do Usuário</h1>
+    <p></p>
+  </div>
+  <div class="card-list">
+    <div v-for="(reg, index) in registros"
+      :key="reg.date"
+      class="card"
+      @click="toggleExpand(index)">
       <div class="card-content">
-        <h3>{{ item.title }}</h3>
-        <span class="icon" :class="{'up': expandedIndex === index}">&#9660;</span>
+        <h3>{{ reg.date }}</h3>
+        <span class="icon" :class="{ 'up': expandedIndex === index }">&#9660;</span>
       </div>
-      <p v-if="expandedIndex === index">{{ item.details }}</p>
+      <div class="card-content" v-if="expandedIndex === index">
+        <span>Peso: {{ reg.peso }}</span>
+        <span> {{ reg.fatorAtividade }}</span>
+      </div>
     </div>
   </div>
-  </template>
-  
-  <script>
-  export default {
+</template>
+
+<script>
+import { mapState } from 'pinia'
+import { pacienteStore } from "@/stores/pacientes.js"
+
+export default {
   data() {
     return {
       expandedIndex: null,
-      items: [
-        { id: 1, title: '10/09/2024', details: 'IMC:22,9 TMB:918,75 GE:1.470' },
-        { id: 2, title: '02/09/2024', details: 'IMC:32,2 TMB:878,56 GE:1.426' },
-        { id: 3, title: '24/08/2024', details: 'IMC:22,9 TMB:900,45 GE:1.465' }
-      ]
-    };
+    }
+  },
+  computed: {
+    ...mapState(pacienteStore, ['registros']),
   },
   methods: {
     toggleExpand(index) {
@@ -37,7 +39,7 @@
     }
   }
 };
-  </script>
+</script>
 
 <style scoped>
 .card-list {
