@@ -15,24 +15,47 @@
             </div>
         </div>
     </NCContainer>
+    <p>Peso: {{ ultimoRegistro.peso }}</p>
+    <p>Fator de Atividade: {{ ultimoRegistro.fatorAtividade }}</p>
+    <p>Data: {{ ultimoRegistro.date }}</p>
 </template>
 
 <script>
 import NCContainer from './NCContainer.vue';
 import NCNumber from './NCNumber.vue';
-import { mapState, mapWritableState } from 'pinia'
-import { pacienteStore } from "@/stores/pacientes.js"
+import { mapState, mapWritableState } from 'pinia';
+import { pacienteStore } from "@/stores/pacientes.js";
 
 export default {
+    name: 'NCInfo',
+    props: {
+        peso: Number,
+        fatorAtividade: Number,
+    },
     components: {
         NCNumber,
         NCContainer,
-    },
+    },  
     computed: {
-        ...mapState(pacienteStore, ['ge', 'imc', 'tmb']),
-        ...mapWritableState(pacienteStore, ['altura', 'fatorAtividade', 'genero', 'idade', 'peso']),
+        ...mapState(pacienteStore, ['ultimoRegistro']),
+        ...mapWritableState(pacienteStore, ['altura', 'genero', 'idade',]),
+        ge() {
+            return this.tmb * this.ultimoRegistro.fatorAtividade;
+        },
+        imc() {
+            return this.ultimoRegistro.peso / this.altura ** 2;
+        },
+        tmb() {
+            return this.genero === 'Feminino' ? this.tmbFeminino : this.tmbMasculino;
+        },
+        tmbFeminino() {
+            return 655 + 9.56 * this.ultimoRegistro.peso + 1.85 * this.altura - 4.68 * this.idade;
+        },
+        tmbMasculino() {
+            return 66.5 + 13.8 * this.ultimoRegistro.peso + 5 * this.altura - 6.8 * this.idade;
+        },
     },
-}
+};
 </script>
 
 <style scoped>
@@ -56,9 +79,9 @@ export default {
 }
 
 .result {
-  font-size: 18px;
-  text-align: left;
-  margin-top: 20px;
+    font-size: 18px;
+    text-align: left;
+    margin-top: 20px;
 }
 
 .title {
