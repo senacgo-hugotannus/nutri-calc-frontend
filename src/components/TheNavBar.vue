@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="container">
         <MainPage title="Nutri Calc" />
         <nav>
             <NCContainer>

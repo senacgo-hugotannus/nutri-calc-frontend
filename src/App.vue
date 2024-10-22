@@ -70,20 +70,24 @@ nav a:first-of-type {
 
 @media (min-width: 1024px) {
   header {
+    padding-right: calc(var(--section-gap) / 1);
+    text-align: center;
     display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
+    justify-content: center;
+    align-items: center;
     position: fixed;
     top: 0;
-    text-align: center;
+    width: 50%;
+    padding: 5px 0;
   }
 
   .logo {
     margin: 0 2rem 0 0;
+
   }
 
   nav {
-    text-align: left;
+    text-align: center;
     margin-left: -1rem;
     font-size: 1rem;
     padding: 1rem 0;
