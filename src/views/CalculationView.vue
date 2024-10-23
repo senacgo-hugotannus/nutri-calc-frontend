@@ -74,7 +74,7 @@ div {
 
 input {
   width: 52px;
-  text-align: right;
+  text-align: left;
 }
 
 label,

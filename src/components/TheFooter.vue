@@ -1,7 +1,7 @@
 <template>
-    <div>
-        <NCInfo />
-    </div>
+        <div>
+            <NCInfo />
+        </div>
 </template>
 
 <script>
