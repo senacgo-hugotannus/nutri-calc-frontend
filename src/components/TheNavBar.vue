@@ -1,14 +1,12 @@
 <template>
-    <div class="container">
-        <MainPage title="Nutri Calc" />
-        <nav>
-            <NCContainer>
-                <div>
-                    <slot></slot>
-                </div>
-            </NCContainer>
-        </nav>
-    </div>
+    <NCContainer>
+        <div class="navbar-inner">
+            <MainPage title="Nutri Calc" />
+            <nav>
+                <slot></slot>
+            </nav>
+        </div>
+    </NCContainer>
 </template>
 
 <script>
@@ -22,3 +20,10 @@ export default {
     },
 }
 </script>
+
+<style>
+    navbar-inner{
+        display: flex;
+        margin-top: 0 auto;
+    }
+</style>

@@ -48,19 +48,25 @@ export default {
 
 .result {
     display: flex;
-    justify-content: space-around;
+    margin: auto;
+    justify-content: center;
 }
 
 .div-info {
     margin: 20px;
 }
 
-.result {
-  font-size: 18px;
-  text-align: left;
-  margin-top: 20px;
+@media (min-width: 600px) {
+    
+    .result {
+        text-align: center;
+        margin-top: 0;
+        position: absolute;
+        flex-direction: row;
+        padding: auto;
+    }
 }
-
+    
 .title {
     font-weight: 1000;
     color: hsla(160, 100%, 37%, 1);

@@ -23,12 +23,13 @@ export default {
 h1 {
   font-weight: 500;
   font-size: 2.6rem;
-  position: center;
+  position: relative;
   top: -10px;
 }
 
 h3 {
   font-size: 1.2rem;
+  text-align: center;
 }
 
 .greetings h1,
@@ -40,7 +41,7 @@ h3 {
 
   .greetings h1,
   .greetings h3 {
-    text-align: left;
+    text-align: center;
   }
 }
 </style>
