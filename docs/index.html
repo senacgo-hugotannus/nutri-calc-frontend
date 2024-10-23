@@ -12,8 +12,28 @@
   <div id="app"></div>
   <script>
     window.$docsify = {
-      name: '',
-      repo: ''
+      name: 'Nutri-Calc',
+      repo: 'https://github.com/senacgo-hugotannus/nutri-calc-frontend',
+      loadSidebar: true,
+      subMaxLevel: 2,
+      alias: {
+        '/.*/_sidebar.md': '/_sidebar.md'
+      },
+      copyCode: {
+        buttonText: 'Copiar código',
+        errorText: 'Erro ao copiar',
+        successText: 'Copiado!',
+      },
+      latex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']], // default
+        displayMath: [['$$', '$$']],               // default
+      },
+      search: {
+        maxAge: 86400000,
+        paths: 'auto',
+        placeholder: 'Buscar',
+        noData: 'Nenhum resultado encontrado.'
+      }
     }
   </script>
   <!-- Docsify v4 -->
