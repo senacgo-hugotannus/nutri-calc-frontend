@@ -37,12 +37,12 @@ export default {
 
 <style scoped>
 .Kg::after {
-    padding: 5px;
+    padding: 6px;
     content: "Kg/m²";
 }
 
 .Kcal::after {
-    padding: 5px;
+    padding: 6px;
     content: "Kcal";
 }
 
@@ -51,8 +51,21 @@ export default {
     justify-content: space-around;
 }
 
+@media(min-width: 600px){
+    .div-info{
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    
 .div-info {
-    margin: 20px;
+    display: flex;
+    margin: 15px;
+    padding: 10px;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:last baseline;
+}
+
 }
 
 .result {
