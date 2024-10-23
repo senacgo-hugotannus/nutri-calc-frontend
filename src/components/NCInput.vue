@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="input-group">
         <label>{{ label }}<input :value="modelValue" 
             @input="$emit('update:modelValue', $event.target.value)"
              :step="step" :type="type" class="input-field"/>
