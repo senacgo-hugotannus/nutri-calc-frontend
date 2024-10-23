@@ -1,5 +1,5 @@
 <script>
-import { mapWritableState } from 'pinia'
+import { mapWritableState, mapActions } from 'pinia'
 import NCPanel from '@/components/NCPanel.vue';
 import NCInput from '@/components/NCInput.vue'
 import { pacienteStore } from "@/stores/pacientes.js"
@@ -22,6 +22,9 @@ export default {
   computed: {
     ...mapWritableState(pacienteStore, ['altura', 'fatorAtividade', 'genero', 'idade', 'peso']),
   },
+  methods: {
+    ...mapActions(pacienteStore, ['addRegistro'])
+  }
 }
 </script>
 

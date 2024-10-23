@@ -34,5 +34,10 @@ export const pacienteStore = defineStore('paciente', {
     tmbMasculino(state) {
       return 66.5 + 13.8 * state.peso + 5 * state.altura - 6.8 * state.idade
     }
+  },
+  actions: {
+    addRegistro(peso, fatorAtividade) {
+      this.registros.push({peso, fatorAtividade, date: Date.now()})
+    }
   }
 })
