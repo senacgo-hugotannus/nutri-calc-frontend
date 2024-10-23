@@ -4,36 +4,43 @@
     <p></p>
   </div>
   <div class="card-list">
-    <div v-for="(reg, index) in registros"
-      :key="reg.date"
-      class="card"
-      @click="toggleExpand(index)">
+    <div v-for="(reg, index) in registros" :key="reg.data" class="card" @click="toggleExpand(index)">
       <div class="card-content">
-        <h3>{{ reg.date }}</h3>
+        <h3>{{ reg.data }}</h3>
         <span class="icon" :class="{ 'up': expandedIndex === index }">&#9660;</span>
       </div>
       <div class="card-content" v-if="expandedIndex === index">
         <span>Peso: {{ reg.peso }}</span>
-        <span> {{ reg.fatorAtividade }}</span>
+        <span> {{ reg.fator_atividade }}</span>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import { mapState } from 'pinia'
+/*import { mapState } from 'pinia'
 import { pacienteStore } from "@/stores/pacientes.js"
+*/
+import { supabase } from '../lib/supabaseClient'
 
 export default {
   data() {
     return {
+      registros: [],
       expandedIndex: null,
     }
   },
+  mounted() {
+    this.getRegistros()
+  },
   computed: {
-    ...mapState(pacienteStore, ['registros']),
+    //...mapState(pacienteStore, ['registros']),
   },
   methods: {
+    async getRegistros() {
+      const { data } = await supabase.from('registros').select()
+      this.registros = data
+    },
     toggleExpand(index) {
       this.expandedIndex = this.expandedIndex === index ? null : index;
     }
