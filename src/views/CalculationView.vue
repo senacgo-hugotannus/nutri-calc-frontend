@@ -1,5 +1,5 @@
 <script>
-import { mapWritableState } from 'pinia'
+import { mapWritableState, mapActions } from 'pinia'
 import NCPanel from '@/components/NCPanel.vue';
 import NCInput from '@/components/NCInput.vue'
 import { pacienteStore } from "@/stores/pacientes.js"
@@ -8,8 +8,13 @@ export default {
     NCPanel,
     NCInput,
   },
+  unmounted() {
+    this.salvarRegistro() 
+  },
   data() {
     return {
+      peso: 0,
+      fatorAtividade: 1.4,
       atividades: [
         { texto: "Bem leve", fator: 1.2 },
         { texto: "Leve", fator: 1.4 },
@@ -20,8 +25,14 @@ export default {
     }
   },
   computed: {
-    ...mapWritableState(pacienteStore, ['altura', 'fatorAtividade', 'genero', 'idade', 'peso']),
+    ...mapWritableState(pacienteStore, ['altura', 'genero', 'idade']),
   },
+  methods: {
+    ...mapActions(pacienteStore, ['addRegistro']),
+    salvarRegistro () {
+      this.addRegistro (this.peso, this.fatorAtividade)
+    }
+  }
 }
 </script>
 
