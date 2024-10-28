@@ -50,6 +50,13 @@ export default {
     display: flex;
     margin: auto;
     justify-content: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 1rem;
+    box-sizing: border-box;
 }
 
 .div-info {
@@ -59,11 +66,16 @@ export default {
 @media (min-width: 600px) {
     
     .result {
+        display: flex;
+        margin: auto;
+        justify-content: center;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
         text-align: center;
-        margin-top: 0;
-        position: absolute;
-        flex-direction: row;
-        padding: auto;
+        padding: 1rem;
+        box-sizing: border-box;
     }
 }
     
