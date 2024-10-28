@@ -28,7 +28,7 @@ npm run lint
 
 ## Documentação
 
-A documentação dete projeto está organizada pela biblioteca [Docsify](https://docsify.js.org/#/).
+A documentação dete projeto está publicada no [GitHub Pages](https://senacgo-hugotannus.github.io/nutri-calc-frontend/), e está utilizando biblioteca [Docsify](https://docsify.js.org/#/).
 
 Portanto, antes de mais nada, será preciso instalar o pacote `docsify-cli` para realizar a inicialização / visualização de seu conteúdo.
 
