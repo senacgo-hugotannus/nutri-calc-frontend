@@ -48,19 +48,37 @@ export default {
 
 .result {
     display: flex;
-    justify-content: space-around;
+    margin: auto;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 1rem;
+    box-sizing: border-box;
 }
 
 .div-info {
     margin: 20px;
 }
 
-.result {
-  font-size: 18px;
-  text-align: left;
-  margin-top: 20px;
+@media (min-width: 600px) {
+    
+    .result {
+        display: flex;
+        margin: auto;
+        justify-content: center;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+        padding: 1rem;
+        box-sizing: border-box;
+    }
 }
-
+    
 .title {
     font-weight: 1000;
     color: hsla(160, 100%, 37%, 1);

@@ -36,6 +36,8 @@ export default {
 header {
   line-height: 1.5;
   max-height: 100vh;
+  display: flex;
+  justify-content: center;
 }
 
 .logo {
@@ -47,7 +49,8 @@ nav {
   width: 100%;
   font-size: 12px;
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 5rem;
+  flex-direction: row;
 }
 
 nav a.router-link-exact-active {
@@ -70,21 +73,26 @@ nav a:first-of-type {
 
 @media (min-width: 1024px) {
   header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    padding: 5px;
+    text-align: center;
   }
 
-   .logo {
+  .logo {
     margin: 0 2rem 0 0;
+
   }
 
   nav {
-    text-align: left;
+    text-align: center;
     margin-left: -1rem;
     font-size: 1rem;
     padding: 1rem 0;
-    margin-top: 1rem;
+    margin-top: auto;
   }
 }
 </style>

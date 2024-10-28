@@ -29,6 +29,7 @@ h1 {
 
 h3 {
   font-size: 1.2rem;
+  text-align: center;
 }
 
 .greetings h1,
@@ -40,7 +41,7 @@ h3 {
 
   .greetings h1,
   .greetings h3 {
-    text-align: left;
+    text-align: center;
   }
 }
 </style>
