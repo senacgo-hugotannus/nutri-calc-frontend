@@ -3,13 +3,14 @@ import { mapWritableState, mapActions } from 'pinia'
 import NCPanel from '@/components/NCPanel.vue';
 import NCInput from '@/components/NCInput.vue'
 import { pacienteStore } from "@/stores/pacientes.js"
+import { supabase } from '@/lib/supabaseClient';
 export default {
   components: {
     NCPanel,
     NCInput,
   },
   unmounted() {
-    this.salvarRegistro() 
+    this.salvarRegistro()
   },
   data() {
     return {
@@ -29,8 +30,20 @@ export default {
   },
   methods: {
     ...mapActions(pacienteStore, ['addRegistro']),
-    salvarRegistro () {
-      this.addRegistro (this.peso, this.fatorAtividade)
+    async salvarRegistro() {
+      const now = new Date(Date.now());
+      const data = now.toISOString().split('T')[0];
+      const horario = now.toString().split(' ')[4];
+      const id = Math.floor(Math.random(now) * 100000);
+      const { error } = await supabase
+        .from('registros')
+        .insert({ id, peso: this.peso, fator_atividade: this.fatorAtividade, data, horario })
+      if (error) {
+        console.log(error)
+      } else {
+        this.peso = null;
+        this.fatorAtividade = null
+      }
     }
   }
 }
@@ -64,6 +77,7 @@ export default {
         </select>
       </label>
     </div>
+    <button @click="salvarRegistro()">Salvar</button>
   </NCPanel>
 </template>
 
