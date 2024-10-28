@@ -10,7 +10,7 @@
                 <NCNumber :value="tmb" :precision="2" class="Kcal" />
             </div>
             <div class="div-info">
-                <p class="title">Gasto energético:</p>
+                <p class="title">GE:</p>
                 <NCNumber :value="ge" :precision="0" class="Kcal" />
             </div>
         </div>
@@ -57,6 +57,7 @@ export default {
     text-align: center;
     padding: 1rem;
     box-sizing: border-box;
+    background-color: rgb(46, 44, 44);
 }
 
 .div-info {
