@@ -24,6 +24,8 @@ export default {
 <style>
     navbar-inner{
         display: flex;
+        align-items: center;
+        justify-content: space-between;
         margin-top: 0 auto;
     }
 </style>

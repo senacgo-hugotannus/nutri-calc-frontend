@@ -6,7 +6,7 @@
       <RouterLink to="/registration">Registro</RouterLink>
     </TheNavBar>
   </header>
-  <main>
+  <main data-v-7a7a37b1 style="margin-bottom: 120px;">
     <NCContainer>
       <RouterView />
     </NCContainer>
