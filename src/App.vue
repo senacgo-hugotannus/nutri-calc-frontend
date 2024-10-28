@@ -73,16 +73,13 @@ nav a:first-of-type {
 
 @media (min-width: 1024px) {
   header {
-    padding-right: calc(var(--section-gap) / 1);
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     position: fixed;
     top: 0;
-    width: 55%;
-    margin: auto;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
     padding: 5px;
+    text-align: center;
   }
 
   .logo {
